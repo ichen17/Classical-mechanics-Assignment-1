@@ -1,0 +1,15 @@
+import numpy as np
+planetdict ={"Mercury":{"mass":3.3011e23,"radius":2439.7},"Venus":{"mass":4.8675e24,"radius":6051.8},\
+             "Earth":{"mass":5.97237e24,"radius":6371},"Mars":{"mass":6.4171e23,"radius":3389.5},\
+             "Jupiter":{"mass":1.8982e27,"radius":69911},"Saturn":{"mass":5.6834e26,"radius":58232},\
+             "Uranus":{"mass":8.681e25,"radius":25362},"Neptune":{"mass":8.681e25,"radius":24622}} #Reference from the Wikipedia
+
+
+def escapeV(m,r):
+    G=6.67e-11
+    v=np.sqrt((2.0*G*m)/(r*1000))
+    return v
+
+for plant1 in planetdict:
+    print("Plant",plant1,"has mass",planetdict[plant1]["mass"],"kg",", radius",planetdict[plant1]["radius"],\
+          "km and escape velocity",escapeV(planetdict[plant1]["mass"],planetdict[plant1]["radius"]),"(m/s)")
